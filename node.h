@@ -14,6 +14,13 @@ class Node {
         Node<T> *left;
         Node<T> *right;
 
+    public:
+    Node(T data){
+        this->data = data;
+        left = right = nullptr;
+    };
+
+
     template<class>
     friend class BSTree; 
 

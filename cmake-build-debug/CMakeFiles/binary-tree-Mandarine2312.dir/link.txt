@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/binary-tree-Mandarine2312.dir/main.cpp.o CMakeFiles/binary-tree-Mandarine2312.dir/tester/tester.cpp.o CMakeFiles/binary-tree-Mandarine2312.dir/mocker/mocker.cpp.o  -o binary-tree-Mandarine2312 

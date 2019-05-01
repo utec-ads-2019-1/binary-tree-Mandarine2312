@@ -1,4 +1,5 @@
 #include "tester.h"
+#include <vector>
 
 void Tester::execute() {
     Mocker mocker;
@@ -22,6 +23,9 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
 
     ASSERT(elements.size() == test->size(), "There is a problem with the insert or size");
 
+    test->traversePostOrder();
+    cout << endl;
+
     unsigned int toRemove = mocker.generateRandomInt(1, elements.size());
     for (int j = 0; j < toRemove; ++j) {
         unsigned int index = mocker.generateRandomInt(0, elements.size() - 1);
@@ -33,7 +37,7 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
 
     ASSERT(elements.size() == test->size(), "There is a problem with the remove or size");
 
-    auto it = test->begin();
+    /*auto it = test->begin();
     for (int j = 0; j < elements.size() && it != test->end(); ++j) {
         ASSERT(elements.at(j) == *it, "There is a problem with the iterator (++)");
         ++it;
@@ -42,7 +46,7 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
     for (int j = elements.size() - 1; j >= 0; --j) {
         --it;
         ASSERT(elements.at(j) == *it, "There is a problem with the iterator (--)");
-    }
+    }*/
 }
 
 template <typename T>
