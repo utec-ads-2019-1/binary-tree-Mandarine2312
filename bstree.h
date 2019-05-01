@@ -239,11 +239,15 @@ class BSTree {
         }
 
         Iterator<T> begin() {
-            // TODO
+            if(root){
+                return Iterator<T>(root);
+            }else{
+                throw out_of_range("El árbol binario no tiene elementos");
+            }
         }
 
-        Iterator<T> end() { 
-            // TODO
+        Iterator<T> end() {
+            //TODO
         }
 
         ~BSTree() {
