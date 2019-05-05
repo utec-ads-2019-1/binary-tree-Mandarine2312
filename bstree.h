@@ -213,7 +213,7 @@ class BSTree {
             if(root){
                 return Iterator<T>(root);
             }else{
-               // throw out_of_range("El árbol binario no tiene elementos");
+               throw out_of_range("El árbol binario no tiene elementos");
             }
         }
 
@@ -230,7 +230,10 @@ class BSTree {
         }
 
         ~BSTree() {
-            // TODO
+            if(this->root){
+                this->root->chainDelete();
+            }
+            delete this;
         }
 };
 

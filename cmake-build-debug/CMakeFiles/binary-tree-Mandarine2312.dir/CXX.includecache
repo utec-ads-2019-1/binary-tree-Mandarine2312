@@ -18,16 +18,6 @@ node.h
 stack
 -
 
-/home/alejandro/Documents/Workspace/binary-tree-Mandarine2312/main.cpp
-iostream
--
-tester/tester.h
-/home/alejandro/Documents/Workspace/binary-tree-Mandarine2312/tester/tester.h
-
-/home/alejandro/Documents/Workspace/binary-tree-Mandarine2312/mocker/mocker.cpp
-mocker.h
-/home/alejandro/Documents/Workspace/binary-tree-Mandarine2312/mocker/mocker.h
-
 /home/alejandro/Documents/Workspace/binary-tree-Mandarine2312/mocker/mocker.h
 random
 -

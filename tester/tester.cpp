@@ -23,8 +23,20 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
 
     ASSERT(elements.size() == test->size(), "There is a problem with the insert or size");
 
-    /*test->traversePostOrder();
-    cout << endl;*/
+
+    cout << "Traverse pre-order: ";
+    test->traversePreOrder();
+    cout << endl;
+
+    cout << "Traverse in-order: ";
+    test->traverseInOrder();
+    cout << endl;
+
+    cout << "Traverse post-order: ";
+    test->traversePostOrder();
+    cout << "\n\n";
+
+
 
     unsigned int toRemove = mocker.generateRandomInt(1, elements.size());
     for (int j = 0; j < toRemove; ++j) {
@@ -39,7 +51,6 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
 
     auto it = test->begin();
     for (int j = 0; j < elements.size() && it != test->end(); ++j) {
-    //for (int j = 0; j < elements.size(); ++j) {
         ASSERT(elements.at(j) == *it, "There is a problem with the iterator (++)");
         ++it;
     }

@@ -64,7 +64,7 @@ class Iterator {
 
         Iterator<T> operator--() {
             if(done->empty()){
-                //throw out_of_range("El iterador está en el inicio");
+                throw out_of_range("El iterador está en el inicio");
             }else{
                 if(hasReachedEnd){
                     hasReachedEnd = false;

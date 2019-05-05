@@ -21,6 +21,12 @@ class Node {
     };
 
 
+    void chainDelete(){
+        if(this->right) this->right->chainDelete();
+        if(this->left) this->left->chainDelete();
+        delete this;
+    }
+
     template<class>
     friend class BSTree; 
 
