@@ -87,7 +87,6 @@ class BSTree {
                 return true;
             }else{
                 auto temp = (*currentNode);
-
                 if(hasTwoChildren(currentNode)){
                     if((*currentNode)->right){
                         currentNode = &((*currentNode)->right);
@@ -105,24 +104,6 @@ class BSTree {
                     (*currentNode) = (*currentNode)->right;
                     delete temp;
                     return true;
-
-                /*if(hasLeftChild(currentNode)){
-                    (*currentNode) = (*currentNode)->left;
-                    delete temp;
-                    return true;
-                }else if(hasRightChild(currentNode)){
-                    (*currentNode) = (*currentNode)->right;
-                    delete temp;
-                    return true;
-                }else{
-                    if((*currentNode)->right){
-                        currentNode = &((*currentNode)->right);
-                    }
-                    while((*currentNode)->left){
-                        currentNode = &((*currentNode)->left);
-                    }
-                    swapNodeValues(temp, (*currentNode));
-                    removeNode(currentNode);*/
                 }
             }
         }
@@ -143,16 +124,6 @@ class BSTree {
             if((*currentNode)-> left != nullptr & (*currentNode)->right != nullptr) return true;
             else return false;
         }
-
-        /*bool hasLeftChild(Node<T> ** currentNode){
-            if((*currentNode)-> left != nullptr & (*currentNode)->right == nullptr) return true;
-            else return false;
-        }
-
-        bool hasRightChild(Node<T> ** currentNode){
-            if((*currentNode)-> right != nullptr & (*currentNode)->left == nullptr) return true;
-            else return false;
-        }*/
 
         bool hasLeftChild(Node<T> ** currentNode){
             if((*currentNode)-> left) return true;
@@ -242,12 +213,20 @@ class BSTree {
             if(root){
                 return Iterator<T>(root);
             }else{
-                throw out_of_range("El árbol binario no tiene elementos");
+               // throw out_of_range("El árbol binario no tiene elementos");
             }
         }
 
         Iterator<T> end() {
-            //TODO
+            if(root){
+                auto newIt = new Iterator<T>(root);
+                for(int i = 0; i < this->size(); i++){
+                    ++(*newIt);
+                }
+                return *newIt;
+            }else{
+                throw out_of_range("El árbol binario no tiene elementos");
+            }
         }
 
         ~BSTree() {
