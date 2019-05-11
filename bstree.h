@@ -210,6 +210,7 @@ class BSTree {
         }
 
         Iterator<T> begin() {
+            // Esto se debería verificar en el iterator
             if(root){
                 return Iterator<T>(root);
             }else{
@@ -218,6 +219,7 @@ class BSTree {
         }
 
         Iterator<T> end() {
+            // Esto se debería verificar y crear en el iterator, quizás con una función estática
             if(root){
                 auto newIt = new Iterator<T>(root);
                 for(int i = 0; i < this->size(); i++){

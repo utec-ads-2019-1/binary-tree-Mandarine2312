@@ -60,6 +60,7 @@ class Iterator {
                     current = nullNode;
                 }
             }
+            // Falta return
         }
 
         Iterator<T> operator--() {
@@ -76,9 +77,11 @@ class Iterator {
                     done->pop();
                 }
             }
+            // Falta return
         }
 
         T operator*() {
+            // Falta controlar el caso vacío
             return current->data;
         }
 
